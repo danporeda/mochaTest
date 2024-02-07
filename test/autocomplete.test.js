@@ -1,4 +1,5 @@
-it('Shows an autocomplete', () => {
+beforeEach(() => {
+  document.querySelector('#target').innerHTML = '';
   createAutoComplete({
     root: document.querySelector('#target'),
     fetchData() {
@@ -12,20 +13,14 @@ it('Shows an autocomplete', () => {
       return movie.Title;
     }
   });
+});
 
+it('Dropdown starts closed', () => {
   const dropdown = document.querySelector('.dropdown');
   
   expect(dropdown.className).not.to.include('is-active');
 });
 
-it('Should do a thing', () => {
-  const ring = [1, 2, 3, 4, 5];
+it('After searching, dropdown opens up', () => {
 
-  const rando = Math.floor(Math.random() * 5);
-
-  console.log(rando);
-
-  expect(ring[rando]).to.be.lessThan(6);
 });
-
-it('works!', () => { document.querySelector('#target').innerText = greeting});
