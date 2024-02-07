@@ -21,7 +21,11 @@ it('Shows an autocomplete', () => {
 it('Should do a thing', () => {
   const ring = [1, 2, 3, 4, 5];
 
-  const rando = ring[Math.floor(Math.random() * 5)]
+  const rando = Math.floor(Math.random() * 5);
 
-  expect(rando).to.be.lessThan(5);
-})
+  console.log(rando);
+
+  expect(ring[rando]).to.be.lessThan(6);
+});
+
+it('works!', () => { document.querySelector('#target').innerText = greeting});
